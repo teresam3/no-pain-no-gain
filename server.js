@@ -5,6 +5,8 @@ const path = require("path");
 
 const app = express();
 
+const Workout = require("./models/workout")
+
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -12,10 +14,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/workoutdb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 //
 app.get("/", (req, res) => {
@@ -30,18 +32,34 @@ app.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname + "/public/stats.html"));
 });
 
-// app.post("/submit", (req, res) => {
-//   console.log(req.body);
+app.get("/api/workouts", (req, res) => {
+  Workout.find({}, (error, data) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.json(data);
+    }
+  });
+});
 
-//   db.notes.insert(req.body, (error, data) => {
-//     if (error) {
-//       res.send(error);
-//     } else {
-//       res.send(data);
-//     }
-//   });
-// });
+app.post("/api/workouts", (req, res) => {
+  console.log(req.body);
 
+  Workout.create(req.body, (error, data) => {
+    if (error) {
+      res.send(error);
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+app.put("/api/workouts/:id", (req, res) => {
+  const id = req.params.id
+  Workout.findByIdAndUpdate(id, {$push: {exercises: req.body}},{new: true, runValidators: true}).then((workout) => {
+    res.json(workout)
+  });
+});
 // app.get("/all", (req, res) => {
 //   db.notes.find({}, (error, data) => {
 //     if (error) {
