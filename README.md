@@ -2,31 +2,28 @@
 
 # Unit 17 Nosql Homework: Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
-
 ## User Story
+## Why the project is useful
 
 * As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
 
 ## Business Context
+## What the project does
 
 A consumer will reach their fitness goals more quickly when they track their workout progress.
+# How users can get started with the project
+Users are able to input their recent excercises in an attempt to get fit and track their progress.
 
-## Acceptance Criteria
+## Where users can get help with your project
+Users may reach out to the core contributor; teresam3
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+## Who maintains and contributes to the project
+teresam3
 
-The user should be able to:
+## Deployed github pages project:
+https://teresam3.github.io/no-pain-no-gain/.
+## github repo : 
+https://github.com/teresam3/no-pain-no-gain
+## Deployed heroku: 
 
-  * Add exercises to a previous workout plan.
-
-  * Add new exercises to a new workout plan.
-
-  * View the combined weight of multiple exercises on the `stats` page.
-
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
-
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
-
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
 
