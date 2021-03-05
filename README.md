@@ -1,6 +1,6 @@
 # no-pain-no-gain
 
-![home page](https://github.com/teresam3/no-pain-no-gain/blob/main/fitness-tracker.png?raw=true)
+![home page](https://github.com/teresam3/no-pain-no-gain/blob/main//public/images/fitness-tracker.png?raw=true)
 
 ## User Story
 ## Why the project is useful
