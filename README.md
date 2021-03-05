@@ -1,6 +1,6 @@
 # no-pain-no-gain
 
-# Unit 17 Nosql Homework: Workout Tracker
+![home page](https://github.com/teresam3/no-pain-no-gain/blob/main/fitness-tracker.png?raw=true)
 
 ## User Story
 ## Why the project is useful
